@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
-const userHandler = require('./routeHandler/userHandler');
 const foodDataHandler = require('./routeHandler/foodDataHandler');
 const orderHandler = require('./routeHandler/orderHandler');
 
@@ -15,7 +14,6 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING)
     .then(() => console.log('Successful'))
     .catch((err) => console.log(err.message));
 
-app.use('/user', userHandler);
 app.use('/food', foodDataHandler);
 app.use('/order', orderHandler);
 
