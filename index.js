@@ -10,7 +10,7 @@ app.use(cors());
 
 const port = 5000;
 
-mongoose.connect(process.env.MONGO_CONNECTION_STRING)
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.xdwfjii.mongodb.net/pandaFood?retryWrites=true&w=majority`)
     .then(() => console.log('Successful'))
     .catch((err) => console.log(err.message));
 
